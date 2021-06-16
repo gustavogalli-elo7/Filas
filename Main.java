@@ -7,11 +7,12 @@ public class Main {
 		f.adicionar(45);
 		f.adicionar(32);
 		f.adicionar(81);	
-//		f.adicionar(13);
-//		f.quantosNaFila();
+		f.adicionar(100);	
+		f.adicionar(13);
+		
 //		f.status();
 //		f.quantosNaFila();
-		f.estaCheia();
+//		f.estaCheia();
 //		f.estaVazia();
 		
 		

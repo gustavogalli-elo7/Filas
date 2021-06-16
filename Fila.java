@@ -6,6 +6,7 @@ public class Fila {
 	int tamanho;
 	int usada;
 	int [] arrayFila;
+	boolean lotada;
 	// int [] fila = new int [tamanho da fila];
 	// fila[2] = 10.0;
 	
@@ -16,14 +17,21 @@ public class Fila {
 		this.tail = -1;
 		this.usada = 0;
 		arrayFila = new int[tamanho];
+		this.lotada = false;
 	}
 
 	public void adicionar(int item) {
-		this.tail = (this.tail + 1) % this.tamanho; // aumenta 1 na posição TAIL
-		System.out.println("Adicionando o item " + item + " na posição " + this.tail); // imprime
-		this.arrayFila[this.tail] = item; // adiciona ITEM na ARRAYFILA no indice TAIL
-		this.usada = this.usada + 1; // aumenta 1 na quantidade usada
-//		if () {} else {}
+		if (this.lotada) {
+			System.out.println("Não é possível adicionar. A fila está lotada.");
+		} else {
+			this.tail = (this.tail + 1) % this.tamanho; // aumenta 1 na posição TAIL
+			System.out.println("Adicionando o item " + item + " na posição " + this.tail); // imprime
+			this.arrayFila[this.tail] = item; // adiciona ITEM na ARRAYFILA no indice TAIL
+			this.usada = this.usada + 1; // aumenta 1 na quantidade usada
+			if (this.usada == this.tamanho) {
+				this.lotada = true;
+			}
+		}
 		
 	}
 	
@@ -44,6 +52,7 @@ public class Fila {
 	public void estaCheia() {
 		if (this.usada == this.tamanho) {
 			System.out.println("A fila está cheia.");
+			this.lotada = true;
 		} else {
 			System.out.println("A fila não está cheia.");
 		}
