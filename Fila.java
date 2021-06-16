@@ -7,10 +7,7 @@ public class Fila {
 	int usada;
 	int [] arrayFila;
 	boolean lotada;
-	// int [] fila = new int [tamanho da fila];
-	// fila[2] = 10.0;
 	
-	// construtor
 	public Fila(int tamanho) {
 		this.tamanho = tamanho;
 		this.head = 0;
@@ -20,29 +17,33 @@ public class Fila {
 		this.lotada = false;
 	}
 
+	
+	
 	public void adicionar(int item) {
 		if (this.lotada) {
 			System.out.println("Não é possível adicionar. A fila está lotada.");
 		} else {
-			this.tail = (this.tail + 1) % this.tamanho; // aumenta 1 na posição TAIL
-			System.out.println("Adicionando o item " + item + " na posição " + this.tail); // imprime
-			this.arrayFila[this.tail] = item; // adiciona ITEM na ARRAYFILA no indice TAIL
-			this.usada = this.usada + 1; // aumenta 1 na quantidade usada
+			this.tail = (this.tail + 1) % this.tamanho;
+			System.out.println("Adicionando o item " + item + " na posição " + this.tail);
+			this.arrayFila[this.tail] = item;
+			this.usada = this.usada + 1;
 			if (this.usada == this.tamanho) {
 				this.lotada = true;
 			}
 		}
-		
 	}
 	
+	
 	public int pegar() {
-		return this.arrayFila[this.head]; // pega o item na posição HEAD da ARRAYFILA
+		return this.arrayFila[this.head];
 	}
+	
 	
 	public void deletar() {
 		System.out.println("Deletando o item " + this.arrayFila[this.head]);
 		this.head = this.head + 1;
 	}
+	
 	
 	public void estaVazia() {
 		if (this.usada == 0) {
@@ -51,6 +52,7 @@ public class Fila {
 			System.out.println("A fila não está vazia.");
 		}
 	}
+	
 	
 	public void estaCheia() {
 		if (this.usada == this.tamanho) {
@@ -61,6 +63,7 @@ public class Fila {
 		}
 	}
 	
+	
 	public void quantosNaFila() {
 		if (this.usada == 1) {
 			System.out.println("Temos 1 item na fila. Capacidade: " + this.tamanho);
@@ -69,6 +72,7 @@ public class Fila {
 		}
 	}
 	
+	
 	public void status() {
 		System.out.print("--------------------------\nLISTA: ");
 		for(int item: arrayFila) {
@@ -76,8 +80,4 @@ public class Fila {
 		}
 		System.out.println("\n - Head: " + this.arrayFila[this.head] + "\n - Tail: " + this.arrayFila[this.tail] + "\n--------------------------");
 		}
-
-
-
-
 }
