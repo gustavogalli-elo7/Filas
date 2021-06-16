@@ -39,7 +39,10 @@ public class Fila {
 		return this.arrayFila[this.head]; // pega o item na posição HEAD da ARRAYFILA
 	}
 	
-	public void deletar() {}
+	public void deletar() {
+		System.out.println("Deletando o item " + this.arrayFila[this.head]);
+		this.head = this.head + 1;
+	}
 	
 	public void estaVazia() {
 		if (this.usada == 0) {
@@ -67,11 +70,11 @@ public class Fila {
 	}
 	
 	public void status() {
-		System.out.print("LISTA: ");
+		System.out.print("--------------------------\nLISTA: ");
 		for(int item: arrayFila) {
 		System.out.print(item + " ");
 		}
-		System.out.println();
+		System.out.println("\n - Head: " + this.arrayFila[this.head] + "\n - Tail: " + this.arrayFila[this.tail] + "\n--------------------------");
 		}
 
 

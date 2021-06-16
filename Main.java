@@ -8,13 +8,15 @@ public class Main {
 		f.adicionar(32);
 		f.adicionar(81);	
 		f.adicionar(100);	
-		f.adicionar(13);
 		
-//		f.status();
-//		f.quantosNaFila();
-//		f.estaCheia();
-//		f.estaVazia();
+		f.quantosNaFila();
+		f.estaCheia();
+		f.estaVazia();
 		
+		System.out.println("Pegando o item " + f.pegar());
+		f.deletar();
+//		f.deletar();
+		f.status();
 		
 	}
 }
